@@ -1,0 +1,78 @@
+인공지능>머신러닝>딥러닝
+
+완전 연결 층 (fully connected artificial neural network)
+  	     완전  연결  	 인공	신경   망
+	
+강화학습(ex..알파고)
+
+
+★용어 기억하기★
+error : 오차 → 오차 함수
+loss : 손실 → 손실 함수
+cost : 비용 → 비용 함수 
+
+제 1 공식
+y1 = x1*w1 + x2*w2 + 1*b1
+y2 = x1*w3 + x2*w4 + 1*b2
+y3 = x1*w5 + x2*w6 + 1*b3
+
+제 2 공식
+E=(
+(y1 - y1T)**2 +
+(y2 - y2T)**2+
+(y3 - y3T)**2)/2
+
+제 3 공식
+y1E = y1 - y1T
+y2E = y2 - y2T
+y3E = y3 - y3T
+
+제 4 공식 : 은닉층 역전파
+x1E=y1E*w1+y2E*w3+y3E*w5
+x2E=y1E*w2+y2E*w4+y3E*w6
+
+제 5 공식
+y1 = w1*x1 + w2*x2 + b1*1
+y2 = w3*x1 + w4*x2 + b2*1
+y3 = w5*x1 + w6*x2 + b3*1
+
+제 6 공식
+w1E=y1E*x1	w2E=y1E*x2	b1E=y1E*1
+w3E=y2E*x1	w4E=y2E*x2	b2E=y2E*1
+w5E=y3E*x1	w6E=y3E*x2	b3E=y3E*1
+
+제 7 공식
+w1 -=lr*w1E	w2 -=lr*w2E	b1 -=lr*b1E
+w3 -=lr*w3E	w4 -=lr*w5E	b2 -=lr*b2E
+w5 -=lr*w5E	w6 -=lr*w6E	b3 -=lr*b3E
+
+연습문제 2
+
+제 1 공식
+y1=x1*w1+x2*w2+x3*w3+1*b1
+y2=x1*w4+x2*w5+x3*w6+1*b2
+
+제 2 공식
+E=((y1-y1T)**2+(y2-y2T)**2)/2
+
+제 3 공식
+y1E=y1-y1T; y2E=y2-y2T;
+
+제 4 공식
+x1E=y1E*w1+y2E*w4
+x2E=y1E*w2+y2E*w5
+x3E=y1E*w3+y2E*w6
+
+제 5 공식
+y1=w1*x1+w2*x2+w3*x3+b1*1
+y2=w4*x1+w5*x2+w6*x3+b2*1
+
+제 6 공식
+w1E=y1E*x1; w2E=y1E*x2; w3E=y1E*x3; b1E=y1E*1
+w4E=y2E*x1; w5E=y2E*x2; w6E=y2E*x3; b2E=y2E*1
+
+제 7 공식
+w1-=lr*w1E; w2-=lr*w2E; w3-=lr*w3E; b1-=lr*b1E
+w4-=lr*w4E; w5-=lr*w5E; w6-=lr*w6E; b2-=lr*b2E
+
+
